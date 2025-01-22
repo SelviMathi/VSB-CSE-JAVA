@@ -98,7 +98,7 @@ public class Main {
         int num4 = scanner.nextInt();
 
         int max = Math.max(Math.max(num1, num2), Math.max(num3, num4));
-        System.out.println("The maximum of the four numbers is: " + num4);
+        System.out.println("The maximum of the four numbers is: " + max);
 
         scanner.close();
     }
@@ -127,6 +127,5 @@ public class Main {
 }
 
 
-int max = (num1 > num2) ? (num1 > num3 ? (num1 > num4 ? num1 : num4) : (num3 > num4 ? num3 : num4)) 
-                                : (num2 > num3 ? (num2 > num4 ? num2 : num4) : (num3 > num4 ? num3 : num4));
+
 
