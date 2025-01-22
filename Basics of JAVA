@@ -1,5 +1,5 @@
 ******************Basic Syntax******************
-Access_specifier class_name {
+Access_specifier class class_name {
     Access_specifier static return_type main() {
         System.out.println("");
     }
