@@ -85,3 +85,48 @@ Multiline comments(/*…..*/)
 Documentation comments(/**….)
 
 
+**********MAX Of 4 numbers***************
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int num1 = scanner.nextInt();
+        int num2 = scanner.nextInt();
+        int num3 = scanner.nextInt();
+        int num4 = scanner.nextInt();
+
+        int max = Math.max(Math.max(num1, num2), Math.max(num3, num4));
+        System.out.println("The maximum of the four numbers is: " + num4);
+
+        scanner.close();
+    }
+}
+
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int max=0 ;
+
+        for (int i = 1; i <= 4; i++) {
+            int num = scanner.nextInt();
+            if (num > max) {
+                max = num;
+            }
+        }
+
+        System.out.println("The max of the four numbers is: " + max);
+
+        scanner.close();
+    }
+}
+
+
+int max = (num1 > num2) ? (num1 > num3 ? (num1 > num4 ? num1 : num4) : (num3 > num4 ? num3 : num4)) 
+                                : (num2 > num3 ? (num2 > num4 ? num2 : num4) : (num3 > num4 ? num3 : num4));
+
