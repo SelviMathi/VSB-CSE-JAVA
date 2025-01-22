@@ -126,6 +126,8 @@ public class Main {
     }
 }
 
+using ternary operator
 
 
+int max = (num1 > num2 ? num1 : num2) > (num3 > num4 ? num3 : num4) ? (num1 > num2 ? num1 : num2) : (num3 > num4 ? num3 : num4);
 
