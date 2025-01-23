@@ -1,0 +1,103 @@
+**************************ArithmeticOperators************
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 10, b = 4;
+        System.out.println("Addition: " + (a + b));
+        System.out.println("Subtraction: " + (a - b));
+        System.out.println("Multiplication: " + (a * b));
+        System.out.println("Division: " + (a / b));
+        System.out.println("Modulus: " + (a % b));
+    }
+}
+
+
+****************RelationalOperators****************
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 10, b = 20;
+        System.out.println("a == b: " + (a == b));
+        System.out.println("a != b: " + (a != b));
+        System.out.println("a > b: " + (a > b));
+        System.out.println("a < b: " + (a < b));
+        System.out.println("a >= b: " + (a >= b));
+        System.out.println("a <= b: " + (a <= b));
+    }
+}
+
+****************AssignmentOperators****************
+public class Main {
+    public static void main(String[] args) {
+        int a = 5;
+        a += 3;
+        System.out.println("a += 3: " + a);
+        a *= 2;
+        System.out.println("a *= 2: " + a);
+    }
+}
+
+****************LogicalOperators****************
+public class LogicalOperators {
+    public static void main(String[] args) {
+        boolean a = true, b = false;
+        System.out.println("a && b: " + (a && b));
+        System.out.println("a || b: " + (a || b));
+        System.out.println("!a: " + (!a));
+    }
+}
+
+****************UnaryOperators****************
+public class Main {
+    public static void main(String[] args) {
+        int a = 5;
+        System.out.println("a: " + a);
+        System.out.println("++a: " + (++a));
+        System.out.println("a--: " + (a--));
+        System.out.println("a: " + a);
+    }
+}
+
+******************TernaryOperator**********
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 5, b = 10;
+        String result = (a > b) ? "a is greater" : "b is greater";
+        System.out.println(result);
+    }
+}
+
+****************BitwiseOperators****************
+
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 5, b = 3;
+        System.out.println("a & b: " + (a & b));
+        System.out.println("a | b: " + (a | b));
+        System.out.println("a ^ b: " + (a ^ b));
+        System.out.println("~a: " + (~a));
+        System.out.println("a << 1: " + (a << 1));
+        System.out.println("a >> 1: " + (a >> 1));
+    }
+}
+
+
+
+*******************Operator Precedence (Highest to Lowest)***********
+(), [], .
+++, -- (Post-increment, Post-decrement)
+++, -- (Pre-increment, Pre-decrement)
++, -, ~, ! (Unary plus, Unary minus, Bitwise NOT, Logical NOT)
+*, /, % (Multiplicative operators)
++, - (Additive operators)
+<<, >>, >>> (Shift operators)
+<, <=, >, >=, ==, != (Relational operators)
+& (Bitwise AND)
+^ (Bitwise XOR)
+| (Bitwise OR)
+&& (Logical AND)
+|| (Logical OR)
+?: (Ternary/Conditional operator)
+=, +=, -=, *=, /=, %= (Assignment operators)
