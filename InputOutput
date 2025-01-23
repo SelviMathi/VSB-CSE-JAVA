@@ -1,0 +1,22 @@
+How to take Input from User ?
+Scanner Class
+
+The Scanner class is part of the java.util package. It provides methods to parse primitive types and strings using regular expressions.
+
+Java.io.BufferedReader Class
+
+This class reads text from an input stream and buffers the characters for efficient reading. It requires InputStreamReader for console input.
+
+
+Difference between Scanner and BufferefReader Class      
+Feature	                       Scanner	                              BufferedReader
+Package          	            java.util	                              java.io
+Speed                        	Slower (parses input with regex).	      Faster (uses a buffer internally).
+Methods                      	next(), nextInt(), nextLine()	          readLine() only.
+Usage Complexity	            Easy to use.	                          Slightly more code required.
+Thread Safety	                Not thread-safe.	                      Thread-safe.
+
+Difference between print() and println() and printf
+System.out.printf(format, arguments);
+
+Compile Time and Run Time Intilaization
