@@ -1,0 +1,96 @@
+************(n*n)******************
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner selvi=new Scanner(System.in); 
+      int input=selvi.nextInt();
+      for(int row=1;row<=input;row++)
+      {
+         for(int col=1;col<=input;col++)
+                System.out.print("*");
+         System.out.println();
+    }
+        
+    }
+}
+
+*********Right angle triangle**********
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner selvi=new Scanner(System.in); 
+      int input=selvi.nextInt();
+      for(int row=1;row<=input;row++)
+      {
+         for(int col=1;col<=row;col++)
+                System.out.print("*");
+         System.out.println();
+    }
+        
+    }
+}
+*********Left Spaced Right angle triangle**********
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner selvi=new Scanner(System.in); 
+      int input=selvi.nextInt();
+      for(int row=1;row<=input;row++)
+      {
+         for(int col=1;col<=input-row;col++)
+                System.out.print(" ");
+         for(int col=1;col<=row;col++)
+                System.out.print("*");
+         System.out.println();
+    }
+        
+    }
+}
+*********Equilateral triangle**********
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner selvi=new Scanner(System.in); 
+      int input=selvi.nextInt();
+      for(int row=1;row<=input;row++)
+      {
+         for(int col=1;col<=input-row;col++)
+                System.out.print(" ");
+         for(int col=1;col<=2*row-1;col++)
+               System.out.print("*");
+         System.out.println();
+     }
+        
+    }
+}
+**********Diamond************
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+      Scanner selvi=new Scanner(System.in); 
+      int input=selvi.nextInt();
+      for(int row=1;row<=input;row++)
+      {
+         for(int col=1;col<=input-row;col++)
+                System.out.print(" ");
+         for(int col=1;col<=2*row-1;col++)
+               System.out.print("*");
+         System.out.println();
+     }
+     for(int row=input-1;row>0;row--)
+      {
+         for(int col=1;col<=input-row;col++)
+                System.out.print(" ");
+         for(int col=1;col<=2*row-1;col++)
+               System.out.print("*");
+         System.out.println();
+     }
+        
+    }
+}
