@@ -2,10 +2,29 @@ How to take Input from User ?
 Scanner Class
 
 The Scanner class is part of the java.util package. It provides methods to parse primitive types and strings using regular expressions.
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args)  {
+        Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine(); 
+        System.out.println(name);
+    }
+}
+
 
 Java.io.BufferedReader Class
 
 This class reads text from an input stream and buffers the characters for efficient reading. It requires InputStreamReader for console input.
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name = reader.readLine(); 
+        System.out.println(name);
+    }
+}
 
 
 Difference between Scanner and BufferefReader Class      
