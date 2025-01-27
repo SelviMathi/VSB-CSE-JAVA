@@ -5,6 +5,20 @@
 12345
 12345
 
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int limit=sc.nextInt();
+		for(int row=1;row<=limit;row++,System.out.println())
+		{
+		    for(int col=1;col<=limit;col++)
+			System.out.print(col);
+		}
+	}
+}
+
 2.input=5
 
 ABCDE
@@ -13,6 +27,21 @@ ABCDE
 ABCDE
 ABCDE
 
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int limit=sc.nextInt();
+		for(int row=1;row<=limit;row++,System.out.println())
+		{
+		    char ch=65;
+		    for(int col=1;col<=limit;col++)
+			System.out.print(ch++);
+		}
+	}
+}
 3.input=5
 ABCDE
 FGHIJ
@@ -20,6 +49,20 @@ KLMNO
 PQRST
 UVWXY
 
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int limit=sc.nextInt();
+		char ch=65;
+		for(int row=1;row<=limit;row++,System.out.println())
+		{
+		    for(int col=1;col<=limit;col++)
+			System.out.print(ch++);
+		}
+	}
+}
 
 4.input=5
 *****
@@ -28,12 +71,51 @@ UVWXY
 *   *
 *****
 
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int limit=sc.nextInt();
+		for(int row=1;row<=limit;row++,System.out.println())
+		{
+		    for(int col=1;col<=limit;col++)
+			{
+			    if(row==1||row==limit||col==1||col==limit)
+			    System.out.print("*");
+			    else
+			    System.out.print(" ");
+			}
+		}
+	}
+}
+
 5.input=5
 *
 * *
 *   *
 *      *
 * * * * *
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int limit=sc.nextInt();
+		for(int row=1;row<=limit;row++,System.out.println())
+		{
+		    for(int col=1;col<=row;col++)
+			{
+			    if(row==col||row==limit||col==1)
+			    System.out.print("*");
+			    else
+			    System.out.print(" ");
+			}
+		}
+	}
+}
 
 6.input=5
 *   *
@@ -42,7 +124,26 @@ UVWXY
  * *
 *   *
 
-7.input=5
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int limit=sc.nextInt();
+		for(int row=1;row<=limit;row++,System.out.println())
+		{
+		    for(int col=1;col<=limit;col++)
+			{
+			    if(row==col||row+col==limit+1)
+			    System.out.print("*");
+			    else
+			    System.out.print(" ");
+			}
+		}
+	}
+}
+7.input=3
 1   5
  2 4
   3
