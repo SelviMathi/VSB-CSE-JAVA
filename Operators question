@@ -17,6 +17,23 @@ Square of 5 is: 25.0
 Cube of 5 is: 125.0
 Square Root of 5 is: 2.23606797749979
 
+***************************************************************************************************
+import java.util.Scanner;
+
+public class Roots {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        System.out.printf("Square of %d is : %.1f %n ",n,(float)(n*n));
+        System.out.printf("Cube of %d is : %.1f %n",n,(float)(n*n*n));
+        System.out.println("Square root of "+n+" is : "+(Math.sqrt(n)));
+    }
+}
+
+***************************************************************************************************
+
+
+
 Q2.
 Write a program to print the power of m raised to n.
 Input Format
@@ -32,6 +49,22 @@ Sample Input
 3 4
 Sample Output
 81.00
+
+
+**************************************************************************************************
+import java.util.Scanner;
+
+public class Roots {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        int p=in.nextInt();
+        System.out.printf("%.2f",Math.pow(n, p));
+    }
+}
+
+**************************************************************************************************
+
 
 Q3.
 Find the total customers
@@ -54,6 +87,20 @@ Sample Input
 Sample Output
 9
 
+**********************************************************************************************
+import java.util.Scanner;
+
+public class Roots {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        int p=in.nextInt();
+        System.out.println(n+p);
+    }
+}
+
+**********************************************************************************************
+
 Q4.
 If the marks of Alice in 3 subjects are mark1, mark2, mark3. Calculate the total and average.
 Input Format
@@ -66,6 +113,25 @@ Sample Input
 Sample Output
 Total : 288
 Average : 96.00
+
+
+****************************************************************************************************
+import java.util.Scanner;
+
+public class Roots {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        int p=in.nextInt();
+        int x=in.nextInt();
+        System.out.println("Total : "+(n+p+x));
+        System.out.printf("Average : %.2f",(float)(n+p+x)/3);
+    }
+}
+
+****************************************************************************************************
+
+
 
 Q5.
 The Acme Tennis Ball Company is designing a new box to ship its products. The marketing department wants a triangular box that can hold 4 balls, as in the illustration below. The balls fi t exactly inside the box, just touching all three walls and the end caps of the container. All 3 walls of the box are the same size (equilateral triangle). Assume a tennis ball is 6 cm in diameter, and ignore the thickness of the box material. What will be the length and breadth of the material used to make the box? Write a program that fi nds the measure of a side of the box. Program must also display the length and breadth of the material used to make the triangular box.
@@ -84,6 +150,23 @@ Sample Output
 Side : 10.39
 Length : 31.18
 Breadth : 24.00
+
+********************************************************************************************
+
+import java.util.Scanner;
+
+public class Roots {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        System.out.printf("side : %.2f%n",(float)Math.sqrt(3)*n);
+        System.out.printf("length : %.2f%n",(float)Math.sqrt(3)*n*3);
+        System.out.printf("breadth : %.2f",(float)4*n);
+    }
+}
+
+********************************************************************************************
+
 
 6.
 Problem Statement:
@@ -106,6 +189,52 @@ Sample Input
 Sample Output
 7
 
+********************************************************************************************************
+
+import java.util.Scanner;
+
+public class Roots {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        int notes=0;
+        while(n>=100)
+        {
+        n-=100;
+        notes++;
+        }
+        while(n>=50)
+        {
+            n-=50;
+            notes++;
+        }
+        while(n>=10)
+        {
+            n-=10;
+            notes++;
+        }
+        while(n>=5)
+        {
+            n-=5;
+            notes++;
+        }
+        while(n>=2)
+        {
+            n-=2;
+            notes++;
+        }
+        while(n>=1)
+        {
+            n-=1;
+            notes++;
+        }
+        System.out.println(notes);
+    }
+}
+
+*****************************************************************************************************
+
+
 
 Q7.
 Trade Fair
@@ -126,6 +255,23 @@ Sample Output
 Number of attendees on day 1 : 3000
 Number of attendees on day 2 : 6000
 Number of attendees on day 3 : 1500
+
+*************************************************************************************
+
+import java.util.Scanner;
+
+public class Roots {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        System.out.println("Number of attendees on day 1 : "+(n/7)*2);
+        System.out.println("Number of attendees on day 2 : "+(n/7)*4);
+        System.out.println("Number of attendees on day 3 : "+(n/7));
+    }
+}
+
+*************************************************************************************
+
 
 Q8.
 Problem statement
@@ -177,6 +323,29 @@ Sample Output
 1.92
 894.08
 
+*************************************************************************************
+import java.util.Scanner;
+
+public class Roots {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int rupees=in.nextInt();
+        int years=in.nextInt();
+        int r=in.nextInt();
+        double roi=(double)(rupees*years*r/100);
+        double amt=(double)rupees+(roi);
+        double discount=(double)roi*0.02;
+        double bal=(double)amt-discount;
+        System.out.printf("%.2f%n",roi);
+        System.out.printf("%.2f%n",amt);
+        System.out.printf("%.2f%n",discount);
+        System.out.printf("%.2f%n",bal);
+
+    }
+}
+
+*******************************************************************************************
+
 
 Q9.
 Ramu and Somu are going on a picnic. Ramu packs m apples, n oranges. Somu packs
@@ -197,6 +366,29 @@ Sample Input
 Sample Output
 7 12
 
+*********************************************************************************************
+
+import java.util.Scanner;
+
+public class Roots {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int m=in.nextInt();
+        int n=in.nextInt();
+        int m1=in.nextInt();
+        int n1=in.nextInt();
+        int ae=in.nextInt();
+        int oe=in.nextInt();
+        int a=m+m+m1-ae;
+        int o=n+n+n1-oe;
+        System.out.print(a+" "+o);
+
+    }
+}
+
+*********************************************************************************************
+
+
 Q10.
 Write a program to perform bitwise OR operation.
 Input Format
@@ -207,3 +399,19 @@ Sample Input
 78 90
 Sample Output
 94
+
+************************************************************************************************
+
+import java.util.Scanner;
+
+public class Roots {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int m=in.nextInt();
+        int n=in.nextInt();
+        System.out.print(m|n);
+    }
+}
+
+
+*************************************************************************************************
