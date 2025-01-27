@@ -5,6 +5,17 @@
 12345
 12345
 
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    for(int row=1;row<=n;row++,System.out.println()){
+        for(int col=1;col<=n;col++)
+        System.out.print(col);
+    }
+}
+}
 2.input=5
 
 ABCDE
@@ -12,14 +23,41 @@ ABCDE
 ABCDE
 ABCDE
 ABCDE
-
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    for(int row=1;row<=n;row++,System.out.println())
+    {
+        char ch=65;
+        for(int col=1;col<=n;col++)
+        System.out.print(ch++);
+        
+    }
+}
+}
 3.input=5
 ABCDE
 FGHIJ
 KLMNO
 PQRST
 UVWXY
-
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    char ch=65;
+    for(int row=1;row<=n;row++,System.out.println())
+    {
+        
+        for(int col=1;col<=n;col++)
+        System.out.print(ch++);
+        
+    }
+}
+}
 4.input=5
 *****
 *   *
