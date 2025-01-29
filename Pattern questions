@@ -345,6 +345,25 @@ public static void main(String[] args)
     * *
      *
 
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+	    int num=sc.nextInt();
+	    for(int row=1;row<=num;row++,System.out.println())
+	    {
+	        for(int col=1;col<=2*num;col++)
+	        {
+	            if(row==col||row+col==num*2)
+	            System.out.print("*");
+	            else
+	            System.out.print(" ");
+	         }
+	    }
+	}
+}
+
 
 
 14.spiral matrix n=4
