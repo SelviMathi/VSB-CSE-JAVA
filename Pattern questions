@@ -261,7 +261,22 @@ public class Main
 }
 
 		
-	    
+**************************Reverse value pattern**************************
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+ 
+    Scanner Sc=new Scanner(System.in);
+    int limit=Sc.nextInt();
+    for(int row=1;row<2*limit;row++, System.out.println()){
+        for(int col=1;col<2*limit;col++)
+    System.out.print(Math.max(Math.max(row,col),Math.max(2*limit-row,2*limit-col))-limit+1);
+    }
+}
+}
+
 	
 
 12.input=5
@@ -270,10 +285,33 @@ public class Main
  11 12 13 14 15
  20 19 18 17 16
  21 22 23 24 25
+import java.util.Scanner;
 
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int num = 1;
+        
+        for (int row = 1; row <= n; row++, System.out.println()) {
+            if (row % 2 != 0) {
+                for (int col = 1; col <= n; col++) 
+                    System.out.printf("%2d ",num++);
+            } 
+	    else {
+                int start = num + n - 1;
+                for (int col = 1; col <= n; col++) 
+                    System.out.printf("%2d ",start--);
+                           num += n;
+            }
+        }
+    }
+}
+
+
+OR
 public static void main(String[] args)
 {
-    System.out.print("Enter number of rows : ");
     Scanner in=new Scanner(System.in);
     int n=in.nextInt();
     int lim=0;
