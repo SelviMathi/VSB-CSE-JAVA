@@ -263,22 +263,6 @@ public class Main
 	    
 	
 
-public static void main(String[] args)
-{
-    System.out.print("Enter number of rows : ");
-    Scanner in=new Scanner(System.in);
-    int n=in.nextInt();
-    for(int row=1;row<2*n;row++,System.out.println())
-    {
-        for(int col=1;col<2*n;col++)
-        {
-            System.out.print(Math.min(Math.min(row,col),Math.min(2*n-row,2*n-col)));
-        }
-    }
-    }
-}
-
-
 12.input=5
  1   2  3  4 5
  10  9  8  7 6
