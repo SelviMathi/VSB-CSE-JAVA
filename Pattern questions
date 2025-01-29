@@ -177,6 +177,23 @@ public class Main
 1 2 2 2 2 2 2 2 1
 1 1 1 1 1 1 1 1 1
 
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+ 
+    Scanner Sc=new Scanner(System.in);
+    int limit=Sc.nextInt();
+    for(int row=1;row<2*limit;row++, System.out.println()){
+        for(int col=1;col<2*limit;col++)
+    System.out.print(Math.min(Math.min(row,col),Math.min(2*limit-row,2*limit-col)));
+    }
+}
+}
+
+		
+	    
+	
 
 12.input=5
  1   2  3  4 5
