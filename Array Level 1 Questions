@@ -1,12 +1,318 @@
 1.Write a program to accept N values into an integer array and display the contents
+
+******************************************************
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int[] arr=new int[limit];
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+        }
+        for(int row=0;row<limit;row++)
+        {
+            System.out.print(arr[row]+" ");
+        }
+    }
+}
+
+**********************************************************
+
+
 2.Write a program to accept N values into an integer array and display in the reverse order.
+
+*******************************************************
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int[] arr=new int[limit];
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+        }
+        for(int row=limit-1;row>=0;row--)
+        {
+            System.out.print(arr[row]+" ");
+        }
+    }
+}
+
+*********************************************************
+
+
 3. Write a  program to print the count of the elements in an array whose values are lesser than a key element in an unsorted array.
+
+**************************************************************
+
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int[] arr=new int[limit];
+        int count=0;
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+        }
+        int key=in.nextInt();
+        for(int row=0;row<limit;row++)
+        {
+            if(arr[row]<key)
+            {
+                count++;
+            }
+        }
+        System.out.println(count);
+    }
+}
+
+**************************************************************
+
 4.Write a program to find minimum of the array .
+
+**************************************************************
+
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int[] arr=new int[limit];
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+        }
+        int min=arr[0];
+        for(int row=1;row<limit;row++)
+        {
+            if(arr[row]<min) min=arr[row];
+        }
+        System.out.println(min);
+    }
+}
+
+**************************************************************
+
 5.Write a program to find sum of the array 
+
+**************************************************************
+
+
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int[] arr=new int[limit];
+        int sum=0;
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+            sum+=arr[row];
+        }
+        System.out.println(sum);
+    }
+}
+**************************************************************
+
 6.Write a program to search an element in the given array and print the searched elements index. If no such elements were found print -1
+
+**************************************************************
+
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int[] arr=new int[limit];
+        int sum=0;
+        int index=-1;
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+        }
+        int target=in.nextInt();
+        for(int row=0;row<limit;row++)
+        {
+            if(target==arr[row])
+            {
+                index=row;
+                break;
+            }
+        }
+        System.out.println(index);
+    }
+}
+
+**************************************************************
+
 7.You are given an array of 0s and 1s in random order. Segregate 0s on left side and 1s on right side of the array . 
 Input array   =  [0, 1, 0, 1, 0, 0, 1, 1, 1, 0] 
 Output array =  [0, 0, 0, 0, 0, 1, 1, 1, 1, 1] 
+
+**************************************************************
+
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int[] arr=new int[limit];
+        int[] arranged_arr=new int[limit];
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+        }
+        int arranged_row=0;
+        for(int row=0;row<limit;row++)
+        {
+            if(arr[row]==0)
+            {
+                arranged_arr[arranged_row++]=arr[row];
+            }
+        }
+        for(int row=0;row<limit;row++)
+        {
+            if(arr[row]==1)
+            {
+                arranged_arr[arranged_row++]=arr[row];
+            }
+        }
+        for(int row=0;row<limit;row++)
+        {
+            System.out.print(arranged_arr[row]+" ");
+        }
+    }
+}
+
+
+**************************************************************
+
 8.Write a program  to replace the array elements with sum of other  elements.
+
+**************************************************************
+
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int[] arr=new int[limit];
+        int sum=0;
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+            sum+=arr[row];
+        }
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=sum-arr[row];
+            System.out.print(arr[row]+" ");
+        }
+        
+    }
+}
+
+**************************************************************
+
 9.Write a program  to insert the value at given position in the array.
+
+**************************************************************
+
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int[] arr=new int[limit];
+        int[] new_arr=new int[limit+1];
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+        }
+        int pos=in.nextInt();
+        int target=in.nextInt();
+        for(int row=0;row<pos;row++)
+        {
+            new_arr[row]=arr[row];
+            System.out.print(new_arr[row]+" ");
+        }
+        new_arr[pos]=target;
+        System.out.print(new_arr[pos]+" ");
+        for(int row=pos;row<limit;row++)
+        {
+            new_arr[row+1]=arr[row];
+            System.out.print(new_arr[row+1]+" ");
+        }
+        
+    }
+}
+
+**************************************************************
+
 10.Write a program  to delete the value at given position from the array.
+
+**************************************************************
+
+import java.util.Scanner;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int[] arr=new int[limit];
+        int[] new_arr=new int[limit-1];
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+        }
+        int pos=in.nextInt();
+        for(int row=0;row<pos;row++)
+        {
+            new_arr[row]=arr[row];
+            System.out.print(new_arr[row]);
+        }
+        for(int row=pos;row<limit-1;row++)
+        {
+            new_arr[row]=arr[row+1];
+            System.out.print(new_arr[row]);
+        }
+        
+    }
+}
+
+**************************************************************
