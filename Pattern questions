@@ -374,6 +374,8 @@ public class Main
 10  9  8 7  
 
 
+
+
 15.Pascals Triangle n=5
     1    
    1 1   
@@ -381,11 +383,53 @@ public class Main
  1 3 3 1 
 1 4 6 4 1
 
+import java.util.*;
+class Main {
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        for (int row = 1; row <= n; row++) {
+            for (int col = 1; col <= n - row; col++)
+                System.out.print(" ");
+            
+            int Val = 1;
+            for (int col = 1; col <= row; col++) {
+                System.out.print(Val + " ");
+                Val = Val * (row-col) / col;
+            }
+            System.out.println();
+        }
+    }
+    }
+
+ 
+        
 16.Hollow rectangle n=4 m=6
 ******
 *    *
 *    *
 ******
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner ob = new Scanner(System.in);
+        int len= ob.nextInt();
+        int bre=ob.nextInt();
+        for (int row = 1; row <= len; row++, System.out.println()) {
+            for (int col = 1; col <=bre; col++) 
+            {
+            if(row==1 || row==len || col==1 || col==bre)   System.out.print("*");
+                else
+                System.out.print(" ");
+            }
+            
+        }
+
+    ob.close();     }
+}
 
 
 17.Heart shape n=6
@@ -396,6 +440,42 @@ public class Main
    *****   
     ***    
      *     
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+              int n = scanner.nextInt();
+        
+
+        for (int row = n / 2; row <= n; row += 2) {
+            for (int col = 1; col < n - row; col += 2)
+                System.out.print(" ");
+            
+            for (int col = 1; col <= row; col++) 
+                System.out.print("*");
+            
+            for (int col = 1; col <= n -row; col++) 
+                System.out.print(" ");
+            
+            for (int col = 1; col <= row; col++) 
+                System.out.print("*");
+            
+            System.out.println();
+        }
+        
+        for (int row = n; row >0; row--) {
+            for (int col = row; col < n; col++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= (row * 2) - 1; col++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
 
 18.Hour class n=5
 *********
@@ -408,6 +488,35 @@ public class Main
  *******
 *********
 
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner ob = new Scanner(System.in);
+        int num = ob.nextInt();
+
+        for (int row = 1; row <= num; row++, System.out.println()) {
+            for (int col = 1; col <row; col++) 
+                System.out.print(" ");
+            for (int col = 1; col <= 2*(num-row)+1; col++) 
+                System.out.print("*");
+            
+            
+        }
+
+        for (int row = num-1; row >0; row--, System.out.println()) {
+           for (int col = 1; col <row; col++) 
+                System.out.print(" ");
+            for (int col = 1; col <= 2*(num-row)+1; col++) 
+                System.out.print("*");
+             
+        }
+       
+        
+        ob.close();     }
+}
+
+
 19. input=5
 1
 
@@ -417,6 +526,8 @@ public class Main
 
 4*4*4*4
 
+5*5*5*5*5
+
 4*4*4*4
 
 3*3*3
@@ -424,6 +535,26 @@ public class Main
 2*2
 
 1*
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner ob = new Scanner(System.in);
+        int num = ob.nextInt();
+
+        for (int row = 1; row <= num; row++, System.out.println()) {
+            for (int col = 1; col <= row; col++) 
+                System.out.print(col == 1 ? row : "*" + row);
+                 }
+
+        for (int row = num-1; row >0; row--, System.out.println()) {
+            for (int col = 1; col <= row; col++) 
+                System.out.print(col == 1 ? row : "*" + row);
+              }
+}
+}
+
 
 20.  input =5
 
@@ -437,3 +568,24 @@ public class Main
 
  289  324  361  400  441  484  529  576  625
 
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner ob=new Scanner(System.in);
+	    int limit=ob.nextInt();
+	   int val=1,count=1;
+	    for(int row=1;row<=limit;row++,System.out.println())
+	    {
+	        for(int col=1;col<=2*(limit-row);col++)
+	               System.out.print("  ");
+	       for(int col=1;col<=count;col++)
+	        {	    System.out.printf("%3d ",val*val);
+	        	    val++;
+	        } 
+	        count+=2;
+	       
+	    }
+	 }
+}
