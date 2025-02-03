@@ -1,0 +1,217 @@
+1.Write a program to accept N values into an integer array and display the contents
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int size=sc.nextInt();
+	int num[]=new int[size];
+
+	for(int ind=0;ind<size;ind++)
+	{
+	num[ind]=sc.nextInt();
+	  	System.out.print(num[ind]+" ");
+}	}
+}
+
+2.Write a program to accept N values into an integer array and display in the reverse order.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int size=sc.nextInt();
+	int num[]=new int[size];
+
+	for(int ind=0;ind<size;ind++)
+	  num[ind]=sc.nextInt();
+	 
+	for(int ind=size-1;ind>=0;ind--)
+	  	System.out.print(num[ind]+" ");
+}	
+}
+
+3. Write a  program to print the count of the elements in an array whose values are lesser than a key element in an unsorted array.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int size=sc.nextInt();
+	int num[]=new int[size];
+	for(int ind=0;ind<size;ind++)
+	num[ind]=sc.nextInt();
+	int key=sc.nextInt();
+	int count=0;
+    for(int ind=0;ind<size;ind++)
+    {
+    if(num[ind]<key)
+    count++;
+    }
+    	System.out.print(count);
+}	
+}
+
+4.Write a program to find minimum of the array .
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int size=sc.nextInt();
+	int num[]=new int[size];
+	for(int ind=0;ind<size;ind++)
+	num[ind]=sc.nextInt();
+	int min=num[0];
+	for(int ind=0;ind<size;ind++)
+    {
+    if(num[ind]<min)
+    min=num[ind];
+    }
+    	System.out.print(min);
+}	
+}
+5.Write a program to find sum of the array 
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int size=sc.nextInt();
+	int num[]=new int[size];
+	int sum=0;
+	
+	for(int ind=0;ind<size;ind++)
+	{
+	num[ind]=sc.nextInt();
+	sum=sum+num[ind];
+    }
+    	System.out.print(sum);
+}	
+}
+6.Write a program to search an element in the given array and print the searched elements index. If no such elements were found print -1
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        
+        int[] arr = new int[size];
+        for (int i = 0; i < size; i++) 
+             arr[i] = sc.nextInt();
+        int key=sc.nextInt();
+        boolean found = false;
+        for (int i = 0; i < size; i++) 
+       {    if (key == arr[i]) 
+               { 
+               System.out.print(i);
+               found=true;
+               break;
+                }
+        }
+        if(!found)
+            System.out.print("-1");
+        
+        
+    }
+
+}
+7.You are given an array of 0s and 1s in random order. Segregate 0s on left side and 1s on right side of the array . 
+Input array   =  [0, 1, 0, 1, 0, 0, 1, 1, 1, 0] 
+Output array =  [0, 0, 0, 0, 0, 1, 1, 1, 1, 1] 
+
+
+import java.util.Scanner;
+import java.util.Arrays;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        
+        int[] arr = new int[size];
+        for (int i = 0; i < size; i++) 
+             arr[i] = sc.nextInt();
+        for(int i=0;i<size;i++){
+            for (int j=1;j<size;j++){
+                if(arr[j]<arr[j-1]){
+                    int temp=arr[j];
+                    arr[j]=arr[j-1];
+                    arr[j-1]=temp;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+
+}
+
+8.Write a program  to replace the array elements with sum of other  elements.
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+	int size=sc.nextInt();
+	int num[]=new int[size];
+	int sum=0;
+	
+	for(int ind=0;ind<size;ind++)
+	{
+	num[ind]=sc.nextInt();
+	sum=sum+num[ind];
+	
+    }
+    for(int ind=0;ind<size;ind++)
+	{
+	num[ind]=sum-num[ind];
+	System.out.print(num[ind]+" ");
+	}
+}	
+}
+
+
+9.Write a program  to insert the value at given position in the array.
+import java.util.Arrays;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int limit = sc.nextInt();
+        int pos=sc.nextInt();
+        int value=sc.nextInt();
+        if (pos < 1 || pos > limit + 1) {
+            System.out.println("Invalid position!");
+            return; 
+}
+    int[] arr = new int[limit+1];
+        for (int i = 0; i < limit; i++) 
+            arr[i] = sc.nextInt();
+        
+        for(int i=arr.length-1;i>=pos;i--)
+            arr[i]=arr[i-1];
+        
+        arr[pos-1]=value;
+        System.out.println(Arrays.toString(arr));
+    }
+}
+10.Write a program  to delete the value at given position from the array.
+import java.util.Arrays;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int limit = sc.nextInt();
+        int pos=sc.nextInt();
+        int[] arr = new int[limit];
+        for (int i = 0; i < limit; i++) {
+            arr[i] = sc.nextInt();
+        }
+        for(int i=pos-1;i<limit-1;i++){
+            arr[i]=arr[i+1];
+        }
+        for (int i = 0; i < limit-1; i++) {
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
