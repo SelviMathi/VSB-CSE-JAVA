@@ -1,0 +1,118 @@
+Bit manipulation is a powerful technique used in programming to perform operations at the binary level. It is often used for optimizing performance, reducing memory usage, and solving specific problems efficiently. In Java, bit manipulation is performed using bitwise operators.
+
+1. Bitwise Operators in Java
+Java provides several bitwise operators that operate on individual bits of integer types (int, long, short, byte, and char):
+
+AND (&): Performs a bitwise AND operation. The result is 1 if both bits are 1; otherwise, it is 0.
+Example:
+
+int a = 5;  // 0101 in binary
+int b = 3;  // 0011 in binary
+int result = a & b;  // 0001 (1 in decimal)
+
+OR (|): Performs a bitwise OR operation. The result is 1 if at least one of the bits is 1; otherwise, it is 0.
+
+Example:
+int result = a | b;  // 0111 (7 in decimal)
+
+XOR (^): Performs a bitwise XOR (exclusive OR) operation. The result is 1 if the bits are different; otherwise, it is 0.
+
+Example:
+
+int result = a ^ b;  // 0110 (6 in decimal)
+
+NOT (~): Performs a bitwise NOT operation. It flips all the bits (i.e., 1 becomes 0 and 0 becomes 1).
+
+Example:
+
+int result = ~a;  // 11111111111111111111111111111010 (-6 in decimal for 32-bit int)
+
+
+Left Shift (<<): Shifts the bits of the number to the left and fills 0 on the right. The leftmost bits are discarded.
+
+Example:
+int result = a << 1;  // 1010 (10 in decimal)
+
+Right Shift (>>): Shifts the bits of the number to the right. The rightmost bits are discarded. For signed numbers, the leftmost bit (sign bit) is filled with the original sign.
+
+Example:
+
+int result = a >> 1;  // 0010 (2 in decimal)
+
+Unsigned Right Shift (>>>): Similar to the right shift, but the leftmost bit is always filled with 0, regardless of the sign.
+
+Example:
+int result = a >>> 1;  // 0010 (2 in decimal)
+
+
+**************************** Common Bit Manipulation Techniques*******************
+1.Check if a number is even or odd:
+
+boolean isEven = (num & 1) == 0;  // If the last bit is 0, the number is even
+
+2.Count the number of set bits in a number
+Count the number of 1s in the binary representation of a number.
+
+public int countSetBits(int num) {
+    int count = 0;
+    while (num > 0) {
+        count += num & 1;
+        num >>= 1;
+    }
+    return count;
+}
+3.Check if a number is a power of two
+A number is a power of two if it has exactly one set bit.
+
+public boolean isPowerOfTwo(int num) {
+    return num > 0 && (num & (num - 1)) == 0;
+}
+
+4. Swap two numbers without using a temporary variable
+
+public void swap(int a, int b) {
+    a = a ^ b;
+    b = a ^ b;
+    a = a ^ b;
+    System.out.println("a = " + a + ", b = " + b);
+}
+
+5.Find the missing number in an array
+Given an array containing n distinct numbers taken from 0, 1, 2, ..., n, find the missing number.
+
+public int findMissingNumber(int[] nums) {
+    int result = nums.length;
+    for (int i = 0; i < nums.length; i++) {
+        result ^= i ^ nums[i];
+    }
+    return result;
+}
+
+6.Find the two non-repeating elements in an array
+Given an array where every element appears twice except for two elements, find the two unique elements.
+
+public int[] findTwoUniqueNumbers(int[] nums) {
+    int xor = 0;
+    for (int num : nums) {
+        xor ^= num;
+    }
+    int rightmostSetBit = xor & -xor;  // Find the rightmost set bit
+    int num1 = 0, num2 = 0;
+    for (int num : nums) {
+        if ((num & rightmostSetBit) == 0) {
+            num1 ^= num;
+        } else {
+            num2 ^= num;
+        }
+    }
+    return new int[]{num1, num2};
+}
+
+************************ Applications of Bit Manipulation***********************
+Efficient storage: Bit manipulation can be used to store multiple boolean values in a single integer.
+
+Performance optimization: Bitwise operations are faster than arithmetic operations.
+
+Cryptography: Bit manipulation is used in encryption and decryption algorithms.
+
+Graphics: Bit manipulation is used in image processing and rendering.
