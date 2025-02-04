@@ -23,6 +23,34 @@ Output 2 :
 3
 
 
+***************************************************************************************
+
+
+import java.util.Scanner;
+
+public  class Main
+{
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int[] sticks=new int[limit];
+        int[] small_sticks=new int[limit/2];
+        for(int row=0;row<limit;row++)
+        {
+            sticks[row]=in.nextInt();
+        }
+        int min_length=0;
+        for(int row=0,small_row=0;small_row<limit/2;small_row++,row++)
+        {
+            small_sticks[small_row]=Math.min(sticks[row],sticks[++row]);
+            min_length+=small_sticks[small_row];
+        }
+        System.out.println(min_length);
+    }
+}
+
+***************************************************************************************
+
 2.The Pan Am 73 flight from Bombay to New York en route to Karachi and Frankfurt was hijacked by a few Palestinian terrorists at the Karachi International Airport. The senior flight purser Neerja Banhot withered her fear and helped evacuate the passengers on board.
 Neerja very well knew that she would not be able to evacuate all passengers dodging the hijackers. So she wanted to hand over the responsibility of evacuating the senior citizens(above 60 years of age) and children(below 18 years of age) in the flight to the mid-aged passengers seated in the diagonal
 Given n the number of rows of seats and the number of seats in a row and the ages of passengers in each seat can you find the number of mid-aged passengers seated in the diagonal.
@@ -52,6 +80,33 @@ Input 2 :
 29 28 10 12 56
 Output 2 :
 2
+
+*******************************************************************
+
+
+import java.util.Scanner;
+
+public  class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int mid_age=0;
+        int[][] passenger_age=new int[limit][limit];
+        for(int row=0;row<limit;row++)
+        {
+            for(int col=0;col<limit;col++)
+            {
+                passenger_age[row][col]=in.nextInt();
+                if(passenger_age[row][col]<60&&passenger_age[row][col]>18&&row==col) mid_age++;
+            }
+        }
+        System.out.println(mid_age);
+    }
+}
+
+*********************************************************************
 
 3.Nurikabe logical game (sometimes called Islands in the Stream) is a binary determination puzzle. The puzzle is played on a typically rectangular grid of cells, some of which contain numbers. You must decide for each cell if it is white or black (by clicking on them) according to the following rules:
 •	All of the black cells must be connected.
@@ -95,6 +150,34 @@ Input 2 :
 Output 2 :
 9
 
+
+*****************************************************************
+
+
+import java.util.Scanner;
+
+public  class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int white_cell=0;
+        int[][] cell=new int[limit][limit];
+        for(int row=0;row<limit;row++)
+        {
+            for(int col=0;col<limit;col++)
+            {
+                cell[row][col]=in.nextInt();
+                if(cell[row][col]!=20) white_cell+=cell[row][col];
+            }
+        }
+        System.out.println(white_cell);
+    }
+}
+
+*******************************************************************
+
 4.Find largest and smallest number in an array.
 Input format :
 Input consists of n+1 integer inputs.
@@ -111,6 +194,38 @@ Input 1 :
 Output 1 :
 smallest value: 2
 largest value: 22
+
+**********************************************************
+
+
+import java.util.Scanner;
+
+public  class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int small=0;
+        int large=0;
+        int[] arr=new int[limit];
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+        }
+        small=arr[0];
+        large=arr[0];
+        for(int row=1;row<limit;row++)
+        {
+            small=Math.min(small,arr[row]);
+            large=Math.max(large,arr[row]);
+        }
+        System.out.println("smallest value : "+small);
+        System.out.println("largest value : "+large);
+    }
+}
+
+*********************************************************
 
 5.Given an array A consists of N number of elements.If the sum of the element is "even" print the sum of the element.If the sum of the element is "odd" print the product of the element.
 
@@ -130,6 +245,33 @@ Output 1 :
 16
 
 
+********************************************************************************
+
+import java.util.Scanner;
+
+public  class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int sum=0;
+        int prod=1;
+        int[] arr=new int[limit];
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+            sum+=arr[row];
+            prod*=arr[row];
+        }
+        if(sum%2==0) System.out.println(sum);
+        else System.out.println(prod);
+    }
+}
+
+********************************************************************************
+
+
 6.Given N balls of colour red, white or blue arranged in a line in random order. You have to arrange all the balls such that the balls with the same colours are adjacent with the order of the balls, with the order of the colours being red, white and blue (i.e., all red coloured balls come first then the white coloured balls and then the blue coloured balls).
 
 Input Format
@@ -145,6 +287,43 @@ Sample Input 0
 Sample Output 0
 0 0 1 1 2
 
+*******************************************************************
+
+import java.util.Scanner;
+
+public  class Main
+{
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int temp;
+        int[] arr=new int[limit];
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+        }
+        for(int row=0;row<limit;row++)
+        {
+            for(int i=0;i<limit-1;i++)
+            {
+                if(arr[i]>arr[i+1])
+                {
+                    temp=arr[i+1];
+                    arr[i+1]=arr[i];
+                    arr[i]=temp;
+                }
+            }
+        }
+        for(int row=0;row<limit;row++)
+        {
+            System.out.print(arr[row]+" ");
+        }
+    }
+}
+
+*******************************************************************
+
 7.Given an array X with n number of elements, return true if the given array X is sorted else return false.
 You may consider multiple positions may be shifted in the array X.
 Example 1:
@@ -157,6 +336,40 @@ Example 1:
 Input: X=[3,1,2,4,5]  
 Output: false
 
+***********************************************************************
+
+
+import java.util.Scanner;
+
+public  class Main
+{
+    static boolean isSorted(int[] arr)
+    {
+        int limit=arr.length;
+        for(int row=0;row<limit-1;row++)
+        {
+            for(int check_row=row+1;check_row<limit;check_row++)
+            {
+                if(arr[row]>arr[check_row]) return false;
+            }
+        }
+        return true;
+    }
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int[] arr=new int[limit];
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+        }
+        System.out.println(isSorted(arr));
+    }
+}
+
+**********************************************************************
+
 8.Given an Unsorted array with n number elements. Find the smallest missing element from the array.
 Example 1:
 Input: [1,2,0];
@@ -165,10 +378,89 @@ Example 1:
 Input: [6,3,4,5];
 Output: 1
 
+****************************************************************************
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public  class Main
+{
+    static int Missing_element(int[] arr)
+    {
+        Arrays.sort(arr);
+        if(arr[0]>1)
+            {
+                return 1;
+            }
+        else
+        {
+        for(int row=0;row<arr.length-1;row++)
+        {
+            if(arr[row]!=arr[row+1]-1)
+            {
+                return arr[row]+1;
+            }
+        }
+        }
+        return arr[arr.length-1]+1;
+    }
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int[] arr=new int[limit];
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+        }
+        System.out.println(Missing_element(arr));
+    }
+}
+
+**********************************************************************
+
 9.Given an array X with n size having digits from 0 to 9. find and display missing digits from the array.
 
 Input1: n=4; x= [1,4,3,8]
 output1: 0  2 5  6  7 //missing digits from the array.
+
+*********************************************************************
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public  class Main
+{
+    static boolean isElement(int[] arr,int target)
+    {
+        for(int row=0;row<arr.length;row++)
+        {
+            if(arr[row]==target) return  true;
+        }
+        return false;
+    }
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int[] arr=new int[limit];
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+        }
+        for(int val=0;val<10;val++)
+        {
+            if(!isElement(arr,val))
+            {
+                System.out.print(val+" ");
+            }
+        }
+    }
+}
+
+*************************************************************************
 
 10.Given an array of integers X with n number of elements and an integer, target T, return the indices of the numbers such that the sum of the two numbers is equal to target T. 
  You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -179,3 +471,46 @@ Output: [0,1]
 Example 2:
 Input: X = [3,2,4], T = 6
 Output: [1,2]
+
+****************************************************************************
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public  class Main
+{
+    static int[] sum_indices(int[] arr,int target)
+    {
+        int[] res=new int[2];
+        res[0]=-1;
+        res[1]=-1;
+        for(int row=0;row<arr.length;row++)
+        {
+            for(int second_row=row+1;second_row<arr.length;second_row++)
+            {
+                if(arr[row]+arr[second_row]==target)
+                {
+                    res[0]=row;
+                    res[1]=second_row;
+                    break;
+                }
+            }
+        }
+        return res;
+    }
+    public static void main(String[] args)
+    {
+        Scanner in=new Scanner(System.in);
+        int limit=in.nextInt();
+        int[] arr=new int[limit];
+        for(int row=0;row<limit;row++)
+        {
+            arr[row]=in.nextInt();
+        }
+        int target=in.nextInt();
+        System.out.println(Arrays.toString(sum_indices(arr,target)));
+    }
+}
+
+*********************************************************
