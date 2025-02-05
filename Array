@@ -1,0 +1,81 @@
+An array in Java is a fixed-size, contiguous block of memory that stores elements of the homogeneous data which behaves in similar type.
+
+********************************Declaring & Initializing Arrays********************************
+java
+Copy
+Edit
+// Declaration
+int[] arr;  
+
+// Allocation
+arr = new int[5];  
+
+// Initialization
+arr[0] = 10;  
+arr[1] = 20;  
+
+Example: Declaring & Accessing an Array
+
+public class ArrayExample {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50}; 
+
+        // Accessing elements
+        System.out.println("First Element: " + numbers[0]);
+
+        // Looping through array
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+    }
+}
+Output:
+First Element: 10  
+10 20 30 40 50  
+
+Feature	                        Static Array	                                  Dynamic Array
+Size	                    Fixed at declaration	                          Can grow/shrink dynamically
+Memory                  	Contiguous allocation	                          Uses additional memory for growth
+Performance	              Faster (no resizing)	                          Slightly slower (resizing overhead)
+Example	                  int[] arr = new int[5];	                        ArrayList<Integer> list = new ArrayList<>();
+
+
+Example for Dynamic Array
+
+import java.util.ArrayList;
+
+public class DynamicArrayExample {
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(10);
+        list.add(20);
+        list.add(30);
+
+        System.out.println(list); // Output: [10, 20, 30]
+    }
+}
+
+2D Array Example
+public class MatrixExample {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        // Printing matrix
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+****************************Arrays in Compilers*********************************
+Arrays are contiguously stored in memory, making them efficient for retrieval.
+Used in symbol tables, stack/heap management, and code generation.
+Compilers use pointers and indexing to access array elements efficiently.
