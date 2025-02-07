@@ -142,6 +142,33 @@ public class Main {
     }
 }
 
+OR
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int rows = scanner.nextInt();
+        int[][] jaggedArray = new int[rows][];
+
+        for (int i = 0; i < rows; i++) {
+            int cols = scanner.nextInt();
+            jaggedArray[i] = new int[cols];
+
+            for (int j = 0; j < cols; j++) 
+                jaggedArray[i][j] = scanner.nextInt();
+            
+        }
+
+        System.out.println("\nJagged Array:");
+        for (int i = 0; i < jaggedArray.length; i++,System.out.println()) {
+            for (int j = 0; j < jaggedArray[i].length; j++) 
+                System.out.print(jaggedArray[i][j] + " ");
+             }
+    }
+}
+
 ***********Static VS Dynamic Array********************
 Feature	                        Static Array	                                  Dynamic Array
 Size	                    Fixed at declaration	                          Can grow/shrink dynamically
