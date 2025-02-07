@@ -1,0 +1,173 @@
+An array in Java is a fixed-size, contiguous block of memory that stores elements of the homogeneous data which behaves in similar type.
+
+********************************Declaring & Initializing Arrays********************************
+java
+Copy
+Edit
+// Declaration
+int[] arr;  
+
+// Allocation
+arr = new int[5];  
+
+// Initialization
+arr[0] = 10;  
+arr[1] = 20;  
+
+Example: Declaring & Accessing an Array
+
+public class ArrayExample {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50}; 
+
+        // Accessing elements
+        System.out.println("First Element: " + numbers[0]);
+
+        // Looping through array
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+    }
+}
+Output:
+First Element: 10  
+10 20 30 40 50  
+
+Feature	                        Static Array	                                  Dynamic Array
+Size	                    Fixed at declaration	                          Can grow/shrink dynamically
+Memory                  	Contiguous allocation	                          Uses additional memory for growth
+Performance	              Faster (no resizing)	                          Slightly slower (resizing overhead)
+Example	                  int[] arr = new int[5];	                        ArrayList<Integer> Array_listname = new ArrayList<>();
+
+Operations in Dydnamic Array
+
+Method                        	Description                            Example
+add(e)    	            Adds element e at the end                    list.add(1)
+add(int index, E e)	    Inserts element e at a specific index        list.add(3,2)
+remove(int index)	    Removes element at given index               list.remove(1)
+remove(Object o)	    Removes first occurrence of the object       list.remove(Integer.valueOf(2))
+get(int index)	        Returns the element at the given index        list.get(0)
+set(int index, E e)	    Updates the element at the given index        list.set(2,200)
+contains(E e)	        Checks if the list contains e                boolean exists = numbers.contains(25)
+size()	                Returns the number of elements
+isEmpty()	            Checks if the list is empty
+clear()	                Removes all elements
+
+
+Example for Dynamic Array
+
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(10);
+        list.add(20);
+        list.add(30);
+
+        System.out.println(list); // Output: [10, 20, 30]
+    }
+}
+
+2D Array Example
+public class MatrixExample {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        // Printing matrix
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+*************************Converting Between Array and ArrayList***************
+1. Convert ArrayList to Array
+String[] array = names.toArray(new String[0]);
+
+2. Convert Array to ArrayList
+
+import java.util.Arrays;
+import java.util.List;
+
+String[] arr = {"Red", "Blue", "Green"};
+List<String> list = new ArrayList<>(Arrays.asList(arr));
+
+Performance Analysis
+Operation	                Array	                    ArrayList
+Access (get)	            O(1)	                    O(1)
+Insertion at End	        O(1)	                    O(1)
+Insertion at Middle         O(n)                    	O(n)
+Deletion                	O(n)                    	O(n)
+Search	                    O(n)	                    O(n) (linear search)
+****************************Arrays in Compilers*********************************
+Arrays are contiguously stored in memory, making them efficient for retrieval.
+Used in symbol tables, stack/heap management, and code generation.
+Compilers use pointers and indexing to access array elements efficiently.
+
+
+
+**********************Matrix representation---ROW MAJOR**********
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int rows = scanner.nextInt();
+        int cols = scanner.nextInt();
+
+        int[][] matrix = new int[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) 
+                matrix[i][j] = scanner.nextInt();
+            }
+
+        System.out.println("\nRow-Major Order:");
+        for (int i = 0; i < rows; i++,System.out.println()) {
+            for (int j = 0; j < cols; j++) 
+                System.out.print(matrix[i][j] + " ");
+            }
+}
+}
+
+
+**********************Matrix representation---COlUMN MAJOR**********
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int rows = scanner.nextInt();
+        int cols = scanner.nextInt();
+
+        int[][] matrix = new int[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) 
+                matrix[i][j] = scanner.nextInt();
+            }
+
+         System.out.println("\nColumn-Major Order:");
+        for (int j = 0; j < cols; j++, System.out.println()) {
+            for (int i = 0; i < rows; i++) 
+                System.out.print(matrix[i][j] + " ");
+            }
+    }
+}
+
+*******************************Array ADT - display , append, insert, delete*****************
+
+***********************Array ADT - delete, get, set, search*******************************
+
+********************************Array ADT - shift / rotate******************************
