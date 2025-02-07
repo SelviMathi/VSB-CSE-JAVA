@@ -1,15 +1,98 @@
-Col Sum
-Row Sum
+**********************Col Sum*******************************
+
+Input
+1 2 3
+4 5 6
+7 8 9
+Output
+Sum of Column 0: 12
+Sum of Column 1: 15
+Sum of Column 2: 18
+
+
+*******************Row Sum********************************
+Input
+1 2 3
+4 5 6
+7 8 9
+Output
+Sum of Row 0: 6
+Sum of Row 1: 15
+Sum of Row 2: 24
 Matrix Multiplication
-Main Diagonal Sum
-Minor Diagonal Sum
-Anti Diagonals
-Transpose Of The Matrix
-Row To Column Zero
-Wave Traversal
-Spiral Traversal
-Matrix Addition
-Matrix Subtraction
-Print Diagonal Elements
-Print Upper Bound Elements
-Print Lower Bound Elements
+**************Main Diagonal Sum********************
+Input
+1 2 3
+4 5 6
+7 8 9
+Output
+15
+*******************Minor Diagonal Sum**********************
+Input
+1 2 3
+4 5 6
+7 8 9
+Output
+15
+
+*****************Transpose Of The Matrix*****************
+Input
+1 2 3
+4 5 6
+7 8 9
+Output
+1 4 7
+2 5 8
+3 6 9
+
+**************Row To Column Zero********************
+Input
+1 2 3
+4 5 6
+7 8 9
+Output
+1 0 3
+0 0 0
+7 0 9
+**********************Wave Traversal****************************
+Input
+1 2 3
+4 5 6
+7 8 9
+Output
+1 4 7 8 5 2 3 6 9
+************************Spiral Traversal***********************
+Input
+1 2 3
+4 5 6
+7 8 9
+Output
+1 2 3 6 9 8 7 4 5
+
+******************Matrix Addition*********************
+Input
+M1
+1 2
+3 4
+M2
+5 6 
+7 8
+
+Output
+
+
+*****************Matrix Subtraction*********************
+*********************Print Upper Bound Elements********************
+Input
+1 2 3
+4 5 6
+7 8 9
+Output
+1 2 3 5 6 9
+************************Print Lower Bound Elements*******************
+Input
+1 2 3
+4 5 6
+7 8 9
+Output
+1 4 5 7 8 9
